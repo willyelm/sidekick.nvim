@@ -1,4 +1,4 @@
-# ai-hints.nvim
+# sidekick.nvim
 
 Inline AI hints for TODO/FIXME comments in Neovim. A simple plugin that shows `> Implement with AI` hints above your TODO comments and lets you quickly send them to AI tools.
 
@@ -16,23 +16,15 @@ Inline AI hints for TODO/FIXME comments in Neovim. A simple plugin that shows `>
 ### Using lazy.nvim
 ```lua
 {
-  "willyelm/ai-hints.nvim",
+  "willyelm/sidekick.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {},
+  config = function()
+    require("sidekick").setup()
+  end,
   keys = {
-    {
-      "a",
-      function()
-        require("ai-hints").run_ai()
-      end,
-      desc = "Run AI on comment or custom task"
-    }
+    { "<leader>gz", "<cmd>Sidekick<cr>", desc = "Start agent tool" },
   },
-  opts = {
-    tools = {
-      Claude = "claude --permission-mode bypassPermissions",
-      Codex = "codex",
-    }
-  }
 }
 ```
 
@@ -46,14 +38,14 @@ Inline AI hints for TODO/FIXME comments in Neovim. A simple plugin that shows `>
 
 2. You'll see: `> Implement with AI` above the comment
 
-3. Move cursor to the comment line (hint becomes `> Implement with AI  ←`)
+3. Move cursor to the comment line (hint becomes `> Implement with AI  <-`)
 
-4. Press `<leader>a`:
+4. Press `<leader>gz`:
    - Prompts you to select a tool (Claude, Codex, etc.)
    - Sends the entire comment block to the AI
    - Opens response in a vertical split
 
-5. Or press `<leader>a` anywhere else:
+5. Or press `<leader>gz` anywhere else:
    - Asks for a custom task
    - Prompts you to select a tool
    - Sends task with file context to AI
@@ -61,7 +53,7 @@ Inline AI hints for TODO/FIXME comments in Neovim. A simple plugin that shows `>
 ## Configuration
 ```lua
 {
-  "willyelm/ai-hints.nvim",
+  "willyelm/sidekick.nvim",
   opts = {
     tools = {
       -- String: runs as a shell command in a split terminal

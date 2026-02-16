@@ -1,4 +1,4 @@
-local config = require("ai-hints.config")
+local config = require("sidekick.config")
 
 local M = {}
 

@@ -1,4 +1,4 @@
-local config = require("ai-hints.config")
+local config = require("sidekick.config")
 
 local M = {}
 
@@ -34,7 +34,7 @@ local function run_command(tool_name, cmd, prompt, file_path, line_num)
   local buf = vim.api.nvim_create_buf(true, false)
   local win = vim.api.nvim_get_current_win()
   vim.api.nvim_win_set_buf(win, buf)
-  vim.api.nvim_buf_set_name(buf, string.format("[AI %s] %s", tool_name, prompt:sub(1, 30)))
+  vim.api.nvim_buf_set_name(buf, string.format("[Sidekick %s] %s", tool_name, prompt:sub(1, 30)))
 
   local shell_cmd = string.format('cat %s | %s', tmp_file, cmd)
 
