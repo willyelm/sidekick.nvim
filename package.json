@@ -1,0 +1,22 @@
+{
+	"name": "sidekick.nvim",
+	"version": "0.1.0",
+	"description": "Neovim plugin to add file context and run agents with comment hints TODO/FIXME/etc.",
+	"keywords": [
+		"neovim",
+		"plugin",
+		"ai",
+		"todo",
+		"claude",
+		"codex",
+		"sidekick",
+		"lua",
+		"hints"
+	],
+	"author": "willyelm",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/willyelm/sidekick.nvim"
+	}
+}

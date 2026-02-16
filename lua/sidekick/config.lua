@@ -13,19 +13,6 @@ M.defaults = {
 		direction = "vertical",
 		size = 50,
 	},
-	comment_patterns = {
-		lua = "^%s*%-%-",
-		python = "^%s*#",
-		javascript = "^%s*//",
-		typescript = "^%s*//",
-		typescriptreact = "^%s*//",
-		javascriptreact = "^%s*//",
-		rust = "^%s*//",
-		go = "^%s*//",
-		c = "^%s*//",
-		cpp = "^%s*//",
-		java = "^%s*//",
-	},
 }
 
 M.options = {}

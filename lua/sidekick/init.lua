@@ -28,10 +28,7 @@ function M.run_ai()
     local comment_block, start_line = comments.get_comment_block(bufnr, line_num)
     select_and_run(comment_block, file_path, start_line)
   else
-    vim.ui.input({ prompt = "Task: " }, function(task)
-      if not task then return end
-      select_and_run(task, file_path, nil)
-    end)
+    select_and_run(nil, file_path, line_num)
   end
 end
 
