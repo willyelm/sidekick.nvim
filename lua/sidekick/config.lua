@@ -15,6 +15,7 @@ M.defaults = {
 	},
 	window = {
 		mode = "float",
+		prompt_filetype = "lua",
 		float = {
 			position = "cursor",
 			width = 0.2,

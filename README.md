@@ -50,10 +50,11 @@ A Neovim plugin that detects TODO/FIXME comments and lets you send them to AI to
     },
     window = {
       mode = "float", -- "float" or "split"
+      prompt_filetype = "lua", -- prompt input buffer filetype (Copilot-friendly by default)
       float = {
         position = "cursor", -- "cursor" or "center" (cursor opens below when possible)
-        width = 0.3,         -- capped at 30% of editor width
-        height = 0.3,        -- capped at 30% of editor height
+        width = 0.2,         -- capped at 50% of editor width
+        height = 0.2,        -- capped at 50% of editor height
         border = "rounded",
         close_on_blur = true, -- close float when it loses focus
       },
